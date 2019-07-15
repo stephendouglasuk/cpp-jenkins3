@@ -11,5 +11,10 @@ pipeline {
         sh 'make'
       }
     }
+    stage('Run') {
+      steps {
+        sh '-c ./helloworld'
+      }
+    }
   }
 }
