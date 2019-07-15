@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'gcc'
+      image 'rikorose/gcc-cmake'
     }
 
   }
@@ -11,9 +11,10 @@ pipeline {
         sh 'make'
       }
     }
-    stage('Run') {
+    stage('Test') {
       steps {
-        sh 'test-runner'
+        sh './test-runner'
+        archiveArtifacts 'helloworld'
       }
     }
   }
