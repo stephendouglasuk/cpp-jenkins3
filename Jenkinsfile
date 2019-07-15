@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Run') {
       steps {
-        sh '-c ./helloworld'
+        sh 'test-runner'
       }
     }
   }
