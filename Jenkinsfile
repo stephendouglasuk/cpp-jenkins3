@@ -11,9 +11,10 @@ pipeline {
         sh 'make'
       }
     }
-    stage('Run') {
+    stage('Test') {
       steps {
         sh './test-runner'
+        archiveArtifacts 'helloworld'
       }
     }
   }
